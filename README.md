@@ -3,7 +3,7 @@
 The task is to build a RESTful API to fetch records data from a remote database. 
 
 # Get Started
-- Clone the repository using git clone https://github.com/gate3/ct-backend-task
+- Clone the repository using git clone https://github.com/gate3/getir-task-api
 - Run ```npm i``` or ```npm install``` to install all app dependencies
 - Make a copy of the .env.sample file and rename to .env
 - Start the app using 
