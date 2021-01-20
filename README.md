@@ -22,6 +22,7 @@ There is only a single api available, it can be used to retrieve records
 | Parameter | Description                               | 
 |-------------|-----------------------------------------|
 | Http Method | POST                                    |
+| Base Url    | https://tranquil-hamlet-81728.herokuapp.com                                    |
 | Path        | /v1/records                             |
 
 ### Request Parameters
