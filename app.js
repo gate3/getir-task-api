@@ -1,15 +1,20 @@
 require("dotenv").config();
 const express = require("express");
-const { middleware } = require("./config");
+const { middleware, database } = require("./config");
 const recordsRoute = require("./api-routes/records");
 
 const app = express();
 
-app.use(middleware);
+module.exports = async () => {
+  // Attempt database connection
+  await database.connect();
 
-app.use("/v1", recordsRoute);
+  app.use(middleware);
 
-// Health Check Endpoint
-app.use("/", (req, res) => res.send("Ok"));
+  app.use("/v1", recordsRoute);
 
-module.exports = app;
+  // Health Check Endpoint
+  app.use("/", (req, res) => res.send("Ok"));
+
+  return app;
+};
