@@ -1,3 +1,5 @@
+"use strict";
+
 const Joi = require("joi");
 
 const errorMessages = {
@@ -37,7 +39,7 @@ const schema = {
       'number.max': errorMessages.MINIMUM_COUNT_GREATER_THAN_MAX,
       'any.empty': `Minimum Count ${errorMessages.REQUIRED_FIELD_ERROR}`,
       'any.required': `Minimum Count ${errorMessages.REQUIRED_FIELD_ERROR}`,
-    }),
+    }).strict(),
   maxCount: Joi.number()
     .integer()
     .required()
@@ -46,7 +48,7 @@ const schema = {
       'number.format': `The value provided for maximum count ${errorMessages.GENERIC_INVALID_VALUE}`,
       'any.empty': `Maximum Count ${errorMessages.REQUIRED_FIELD_ERROR}`,
       'any.required': `Maximum Count ${errorMessages.REQUIRED_FIELD_ERROR}`,
-    })
+    }).strict()
 };
 
 module.exports = (data) => Joi.object(schema).validateAsync(data);
