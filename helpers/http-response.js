@@ -20,7 +20,7 @@ class ResponseHelpr {
   successResponse(responseObject, data = {}, code = 0, message = 'Success') {
     const responseJsonData = {
       code,
-      message,
+      msg: message,
       ...data
     };
     return responseObject.json(responseJsonData);
@@ -37,7 +37,7 @@ class ResponseHelpr {
     responseObject, errorObject, data = {}, statusCode = StatusCodes.BAD_REQUEST
   ) {
     const message = (
-      errorObject.message != null ? errorObject.message : 'An error occurred'
+      errorObject.message != null ? errorObject.message : 'Failed'
     );
     if (errorObject.status != null) {
       statusCode = errorObject.status ? errorObject.status : statusCode;
