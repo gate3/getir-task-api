@@ -25,7 +25,7 @@ const schema = {
   endDate: Joi.date().iso()
     .required()
     .messages({
-      'date.format': `The start date provided ${errorMessages.INVALID_DATE_ERROR}`,
+      'date.format': `The end date provided ${errorMessages.INVALID_DATE_ERROR}`,
       'any.empty': `End date ${errorMessages.REQUIRED_FIELD_ERROR}`,
       'any.required': `End date ${errorMessages.REQUIRED_FIELD_ERROR}`,
     }),
