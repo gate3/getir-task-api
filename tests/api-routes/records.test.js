@@ -20,6 +20,7 @@ describe(`POST ${VERSIONS.V1}${PATHS.RECORDS}`, () => {
     server = app.listen(3000);
   });
   afterAll((done) => {
+    // Close the server to avoid memory leaks
     server.close(err => {
       done();
     });
