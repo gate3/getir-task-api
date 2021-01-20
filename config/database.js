@@ -12,7 +12,7 @@ const databaseConnectionOptions = {
   replicaSet: 'rs'
 };
 
-module.exports = async () => {
+const connect = async () => {
   try{
     await mongoose.connect(databaseUrl, databaseConnectionOptions);
     debug('Database connection successful');
@@ -21,4 +21,8 @@ module.exports = async () => {
     debug('Database connection failed with error', e);
     process.exit(1);
   }
+};
+
+module.exports = {
+  connect
 };
