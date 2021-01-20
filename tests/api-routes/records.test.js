@@ -13,17 +13,16 @@ jest.mock('../../services/records/records-repository');
  * the correct response is returned and also that the correct status code is returned
  */
 
-let app, server;
+let app, server, requestTester;
 describe(`POST ${VERSIONS.V1}${PATHS.RECORDS}`, () => {
   beforeAll(async () => {
     app = await appCore();
     server = app.listen(3000);
+    requestTester = request(app);
   });
   afterAll((done) => {
     // Close the server to avoid memory leaks
-    server.close(err => {
-      done();
-    });
+    server.close(err => done());
   });
   afterEach(() => {
     jest.clearAllMocks()
@@ -39,10 +38,7 @@ describe(`POST ${VERSIONS.V1}${PATHS.RECORDS}`, () => {
     recordsRepository.fetchRecords.mockResolvedValue(recordsPayload.MockRecordsResponsePayload);
 
     // Act
-    let apiResponse;
-    apiResponse = await request(app)
-      .post(api)
-      .send(recordsPayload.MockRecordsRequestPayload);
+    const apiResponse = await requestTester.post(api).send(recordsPayload.MockRecordsRequestPayload);
 
     // Assert
     expect(apiResponse.statusCode).toBe(HttpStatusCode.OK);
@@ -60,9 +56,7 @@ describe(`POST ${VERSIONS.V1}${PATHS.RECORDS}`, () => {
     recordsRepository.fetchRecords.mockResolvedValue(recordsPayload.MockRecordsResponsePayload);
 
     // Act
-    const apiResponse = await request(app)
-      .post(api)
-      .send({});
+    const apiResponse = await requestTester.post(api).send({});
 
     // Assert
     expect(apiResponse.statusCode).toBe(HttpStatusCode.BAD_REQUEST);
