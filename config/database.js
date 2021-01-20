@@ -12,6 +12,12 @@ const databaseConnectionOptions = {
   replicaSet: 'rs'
 };
 
+
+/**
+ * The connect function is initiates a connection to the database.
+ * If the connection is unsuccessful or throws an error, the app is exited.
+ * @return void
+ */
 const connect = async () => {
   try{
     await mongoose.connect(databaseUrl, databaseConnectionOptions);
