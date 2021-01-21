@@ -12,7 +12,6 @@ const { StatusCodes } = require("http-status-codes");
 
 const responseCodes = {
   success: 0,
-  resourceCreated: 1,
   badRequest: 1000,
   resourceCreationError: 1001,
   resourceFetchError: 1002,

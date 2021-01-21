@@ -29,8 +29,12 @@ There is only a single api available, it can be used to retrieve records
 | Status Code | Description                                 |
 | ----------- | ------------------------------------------- |
 | 0           | Operation was successful                    |
-| Base Url    | https://tranquil-hamlet-81728.herokuapp.com |
-| Path        | /v1/records                                 |
+| 1000        | Invalid request payload provided            |
+| 1001        | Generic code error in creating a new resource|
+| 1002        | Generic code for error when fetching a resouece            |
+| 1003        | Generic error code for when an update fails            |
+
+> These codes are custom to the app and the http status codes are still going to be sent 
 
 ### Request Parameters
 
