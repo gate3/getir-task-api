@@ -1,15 +1,16 @@
 # getir Test
 
-The task is to build a RESTful API to fetch records data from a remote database. 
+The task is to build a RESTful API to fetch records data from a remote database.
 
 # Get Started
+
 - Clone the repository using git clone https://github.com/gate3/getir-task-api
-- Run ```npm i``` or ```npm install``` to install all app dependencies
+- Run `npm i` or `npm install` to install all app dependencies
 - Make a copy of the .env.sample file and rename to .env
-- Start the app using 
-    - ```npm run dev``` for development
-    - ```npm run prod``` for production 
-    
+- Start the app using
+  - `npm run dev` for development
+  - `npm run prod` for production
+
 # Demo
 
 The app is hosted on heroku. The base url is <a href="https://tranquil-hamlet-81728.herokuapp.com">https://tranquil-hamlet-81728.herokuapp.com</a>.
@@ -19,11 +20,17 @@ The default endpoint is an health check endpoint that returns a success response
 
 There is only a single api available, it can be used to retrieve records
 
-| Parameter | Description                               | 
-|-------------|-----------------------------------------|
-| Http Method | POST                                    |
-| Base Url    | https://tranquil-hamlet-81728.herokuapp.com                                    |
-| Path        | /v1/records                             |
+| Parameter   | Description                                 |
+| ----------- | ------------------------------------------- |
+| Http Method | POST                                        |
+| Base Url    | https://tranquil-hamlet-81728.herokuapp.com |
+| Path        | /v1/records                                 |
+
+| Status Code | Description                                 |
+| ----------- | ------------------------------------------- |
+| 0           | Operation was successful                    |
+| Base Url    | https://tranquil-hamlet-81728.herokuapp.com |
+| Path        | /v1/records                                 |
 
 ### Request Parameters
 
@@ -68,10 +75,10 @@ There is only a single api available, it can be used to retrieve records
 ```
 
 # Project Structure
+
 ![file structure](https://i1.wp.com/blog.logrocket.com/wp-content/uploads/2019/10/folder-structure.png?w=730&ssl=1)
 
 <a href="https://blog.logrocket.com/the-perfect-architecture-flow-for-your-next-node-js-project/">Source LogRocket</a>
-
 
 # Libraries Used
 
@@ -82,7 +89,6 @@ There is only a single api available, it can be used to retrieve records
 - Http Status Codes - For a complete set of status codes
 - Mongoose - ODM for mongodb that makes maning the database much easier
 - SuperTest - Library used for running api integration tests to assert response codes and response body
-
 
 # Todo
 
@@ -97,7 +103,7 @@ I had a lot of fun building this but there are some improvements I can still mak
 
 # Testing
 
-- To run the tests, simply type ```npm test```
-- We can also get code coverage by ```npm run coverage```
+- To run the tests, simply type `npm test`
+- We can also get code coverage by `npm run coverage`
 
 Thank you 👍

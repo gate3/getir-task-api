@@ -26,7 +26,7 @@ const envVars = {
   env: envVariables.NODE_ENV,
   port: envVariables.PORT,
   databaseUrl: envVariables.MONGODB_URI,
-  serviceName: envVariables.SERVICE_NAME
+  serviceName: envVariables.SERVICE_NAME,
 };
 
 module.exports = envVars;

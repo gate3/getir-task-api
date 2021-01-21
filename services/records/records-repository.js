@@ -7,7 +7,7 @@
  * and the business logic remains untouched.
  */
 
-const {recordsModel} = require('../../models/database');
+const { recordsModel } = require("../../models/database");
 
 const aggregationQuery = {
   filterRecords: ({ startDate, endDate, minCount, maxCount }) => {
@@ -18,16 +18,16 @@ const aggregationQuery = {
       $match: {
         createdAt: {
           $gte: new Date(startDate),
-          $lte: new Date(endDate)
-        }
-      }
+          $lte: new Date(endDate),
+        },
+      },
     });
 
     // Stage 2
     aggregationPipeline.push({
       $addFields: {
-        totalCount: {$sum: '$counts'}
-      }
+        totalCount: { $sum: "$counts" },
+      },
     });
 
     // Stage 3
@@ -35,9 +35,9 @@ const aggregationQuery = {
       $match: {
         totalCount: {
           $gte: minCount,
-          $lte: maxCount
-        }
-      }
+          $lte: maxCount,
+        },
+      },
     });
 
     // Stage 4
@@ -47,18 +47,19 @@ const aggregationQuery = {
         key: 1,
         createdAt: 1,
         totalCount: 1,
-      }
+      },
     });
 
     // The allowDiskUse function will help optimize when we have large queries
-    return aggregationPipeline
-  }
+    return aggregationPipeline;
+  },
 };
 
-const fetchRecords = query => (
-  recordsModel.aggregate(aggregationQuery.filterRecords(query)).allowDiskUse(true)
-);
+const fetchRecords = (query) =>
+  recordsModel
+    .aggregate(aggregationQuery.filterRecords(query))
+    .allowDiskUse(true);
 
 module.exports = {
-  fetchRecords
+  fetchRecords,
 };
