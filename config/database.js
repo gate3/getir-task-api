@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
-const debug = require("debug")("getir:server");
-const { databaseUrl } = require("./env-vars");
+const mongoose = require('mongoose');
+const { databaseUrl } = require('./env-vars');
+const { logger } = require('../helpers');
 
 const databaseConnectionOptions = {
   useNewUrlParser: true,
@@ -9,7 +9,7 @@ const databaseConnectionOptions = {
   connectTimeoutMS: 30000,
   useUnifiedTopology: true,
   retryWrites: false,
-  replicaSet: "rs",
+  replicaSet: 'rs',
 };
 
 /**
@@ -20,10 +20,10 @@ const databaseConnectionOptions = {
 const connect = async () => {
   try {
     await mongoose.connect(databaseUrl, databaseConnectionOptions);
-    debug("Database connection successful");
+    logger.info('Database connection successful');
   } catch (e) {
     // If an error occurs, exit app process
-    debug("Database connection failed with error", e);
+    logger.info('Database connection failed with error', e);
     process.exit(1);
   }
 };

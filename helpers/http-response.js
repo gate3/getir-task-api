@@ -1,4 +1,4 @@
-const { StatusCodes } = require("http-status-codes");
+const { StatusCodes } = require('http-status-codes');
 
 /**
  * The response helper is used to return errors or success messages.
@@ -29,7 +29,7 @@ const successResponse = (
   responseObject,
   data = {},
   code = 0,
-  message = "Success"
+  message = 'Success',
 ) => {
   const responseJsonData = {
     code,
@@ -50,9 +50,9 @@ const errorResponse = (
   responseObject,
   errorObject,
   data = {},
-  statusCode = StatusCodes.BAD_REQUEST
+  statusCode = StatusCodes.BAD_REQUEST,
 ) => {
-  const message = errorObject.message != null ? errorObject.message : "Failed";
+  const message = errorObject.message != null ? errorObject.message : 'Failed';
 
   const code = errorObject.code ? errorObject.code : responseCodes.badRequest;
 
