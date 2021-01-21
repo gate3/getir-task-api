@@ -1,5 +1,5 @@
-const recordsPayload = require('./records-payload');
+const recordsPayload = require("./records-payload");
 
 module.exports = {
-  recordsPayload
+  recordsPayload,
 };

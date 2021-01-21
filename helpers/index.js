@@ -1,4 +1,4 @@
-const httpResponse = require('./http-response');
+const httpResponse = require("./http-response");
 
 module.exports = {
   httpResponse,

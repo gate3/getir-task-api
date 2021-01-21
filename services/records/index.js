@@ -1,5 +1,5 @@
-const recordsService = require('./records-service');
+const recordsService = require("./records-service");
 
 module.exports = {
-  recordsService
+  recordsService,
 };

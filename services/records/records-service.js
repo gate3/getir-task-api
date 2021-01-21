@@ -1,6 +1,6 @@
-const recordsValidator = require('./records-validator');
-const {fetchRecords} = require('./records-repository');
-const responseHelper = require('../../helpers/http-response');
+const recordsValidator = require("./records-validator");
+const { fetchRecords } = require("./records-repository");
+const responseHelper = require("../../helpers/http-response");
 
 module.exports = async (requestContext) => {
   try {

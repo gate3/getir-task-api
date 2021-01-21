@@ -1,9 +1,9 @@
-const express = require('express');
+const express = require("express");
 
 const router = express.Router();
-const { PATHS } = require('./constants');
-const {recordsService} = require('../services/records');
-const responseHelper = require('../helpers/http-response');
+const { PATHS } = require("./constants");
+const { recordsService } = require("../services/records");
+const responseHelper = require("../helpers/http-response");
 
 const recordsRouteHandler = async (req, res) => {
   try {
