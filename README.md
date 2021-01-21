@@ -25,6 +25,14 @@ There is only a single api available, it can be used to retrieve records
 | Base Url    | https://tranquil-hamlet-81728.herokuapp.com                                    |
 | Path        | /v1/records                             |
 
+
+| Status Code | Description                               | 
+|-------------|-----------------------------------------|
+| 0           | Operation was successful                                    |
+| Base Url    | https://tranquil-hamlet-81728.herokuapp.com                                    |
+| Path        | /v1/records                             |
+
+
 ### Request Parameters
 
 ```
